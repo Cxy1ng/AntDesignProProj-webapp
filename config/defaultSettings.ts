@@ -15,7 +15,7 @@ const Settings: ProLayoutProps & {
   fixedHeader: true,
   fixSiderbar: true,
   colorWeak: false,
-  title: 'Ant Design Pro',
+  title: 'Microworld 管理后台',
   pwa: true,
   logo: '/logo.png',
   iconfontUrl: '',

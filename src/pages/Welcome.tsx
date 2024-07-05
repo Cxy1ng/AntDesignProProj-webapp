@@ -114,7 +114,7 @@ const Welcome: React.FC = () => {
               color: token.colorTextHeading,
             }}
           >
-            欢迎使用 Ant Design Pro
+            欢迎来到 Microworld 管理后台
           </div>
           <p
             style={{
@@ -126,8 +126,7 @@ const Welcome: React.FC = () => {
               width: '65%',
             }}
           >
-            Ant Design Pro 是一个整合了 umi，Ant Design 和 ProComponents
-            的脚手架方案。致力于在设计规范和基础组件的基础上，继续向上构建，提炼出典型模板/业务组件/配套设计资源，进一步提升企业级中后台产品设计研发过程中的『用户』和『设计者』的体验。
+            我们为像您一样的玩家创建了 MWMCDS 社区 — 适合来自五湖四海、各行各业的玩家，他们都想着同一件事：一个可以尽情畅玩 Minecraft 的地方。我们需要您的帮助，为每个玩家维持 MWMCDS 在线社区的安全和乐趣。
           </p>
           <div
             style={{
