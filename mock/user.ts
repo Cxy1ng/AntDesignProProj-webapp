@@ -47,7 +47,7 @@ export default {
         name: 'Cxy1ng',
         avatar: '/girl.gif',
         userid: '00000001',
-        email: 'antdesign@alipay.com',
+        email: 'cxy1ngmw@outlook.com',
         signature: '海纳百川，有容乃大',
         title: '交互专家',
         group: '蚂蚁金服－某某某事业群－某某平台部－某某技术部－UED',
