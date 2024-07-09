@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
         {
           key: 'github',
           title: <GithubOutlined />,
-          href: 'https://github.com/Cxy1ng/AntDesignProProj-webapp',
+          href: 'https://github.com/',
           blankTarget: true,
         },
         {
@@ -28,6 +28,7 @@ const Footer: React.FC = () => {
           blankTarget: true,
         },
       ]}
+      copyright={`2024 Microworld, Inc. All rights reserved. `}
     />
   );
 };

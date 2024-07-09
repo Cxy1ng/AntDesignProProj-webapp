@@ -100,13 +100,13 @@ const Welcome: React.FC = () => {
         }}
       >
         <div
-          style={{
-            backgroundPosition: '100% -30%',
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: '274px auto',
-            backgroundImage:
-              "url('https://gw.alipayobjects.com/mdn/rms_a9745b/afts/img/A*BuFmQqsB2iAAAAAAAAAAAAAAARQnAQ')",
-          }}
+        //   style={{
+        //     backgroundPosition: '100% -30%',
+        //     backgroundRepeat: 'no-repeat',
+        //     backgroundSize: '274px auto',
+        //     backgroundImage:
+        //       "url('https://gw.alipayobjects.com/mdn/rms_a9745b/afts/img/A*BuFmQqsB2iAAAAAAAAAAAAAAARQnAQ')",
+        //   }}
         >
           <div
             style={{

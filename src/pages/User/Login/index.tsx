@@ -50,7 +50,7 @@ const useStyles = createStyles(({ token }) => {
       overflow: 'auto',
       Filter: 'blur(10px)',
       backgroundImage:
-        "url('')",
+        "url('https://gw.alipayobjects.com/v/huamei_gcee1x/afts/video/jXRBRK_VAwoAAAAAAAAAAAAAK4eUAQBr')",
       backgroundSize: '100% 100%',
     },
   };
