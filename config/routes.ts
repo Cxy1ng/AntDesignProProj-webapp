@@ -29,6 +29,12 @@ export default [
     component: './Welcome',
   },
   {
+    path: '/serverlist',
+    name: 'serverlist',
+    icon: 'cloud',
+    component: './ServerList',
+  },
+  {
     path: '/admin',
     name: 'admin',
     icon: 'crown',

@@ -100,13 +100,13 @@ const Welcome: React.FC = () => {
         }}
       >
         <div
-          style={{
-            backgroundPosition: '100% -30%',
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: '274px auto',
-            backgroundImage:
-              "url('https://gw.alipayobjects.com/mdn/rms_a9745b/afts/img/A*BuFmQqsB2iAAAAAAAAAAAAAAARQnAQ')",
-          }}
+        //   style={{
+        //     backgroundPosition: '100% -30%',
+        //     backgroundRepeat: 'no-repeat',
+        //     backgroundSize: '274px auto',
+        //     backgroundImage:
+        //       "url('https://gw.alipayobjects.com/mdn/rms_a9745b/afts/img/A*BuFmQqsB2iAAAAAAAAAAAAAAARQnAQ')",
+        //   }}
         >
           <div
             style={{
@@ -137,9 +137,9 @@ const Welcome: React.FC = () => {
           >
             <InfoCard
               index={1}
-              href="https://umijs.org/docs/introduce/introduce"
-              title="了解 umi"
-              desc="umi 是一个可扩展的企业级前端应用框架,umi 以路由为基础的，同时支持配置式路由和约定式路由，保证路由的功能完备，并以此进行功能扩展。"
+              href="/404.tsx"
+              title="新建或查看现有实例"
+              desc="您可以通过左侧的菜单查看实例信息并进行管理。"
             />
             <InfoCard
               index={2}
