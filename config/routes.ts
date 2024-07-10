@@ -29,10 +29,20 @@ export default [
     component: './Welcome',
   },
   {
-    path: '/serverlist',
-    name: 'serverlist',
+    path: '/servers',
+    name: 'servers',
     icon: 'cloud',
-    component: './ServerList',
+    routes:[
+      {
+        path: '/servers',
+        redirect: '/servers/serverlist',
+      },
+      {
+        path: '/servers/serverlist',
+        name: 'serverlist',
+        component: './ServerList',
+      }
+    ]
   },
   {
     path: '/admin',
@@ -42,12 +52,12 @@ export default [
     routes: [
       {
         path: '/admin',
-        redirect: '/admin/sub-page',
+        redirect: '/admin/playercenter',
       },
       {
-        path: '/admin/sub-page',
-        name: 'sub-page',
-        component: './Admin',
+        path: '/admin/playercenter',
+        name: 'playercenter',
+        component: './PlayerCenter',
       },
     ],
   },
@@ -56,6 +66,22 @@ export default [
     icon: 'table',
     path: '/list',
     component: './TableList',
+  },
+  {
+    path: '/account',
+    name: 'account',
+    icon: 'user',
+    routes: [
+      {
+        path: '/account',
+        redirect: '/account/settings',
+      },
+      {
+        path: '/account/settings',
+        name: 'settings',
+        component: './AccountSettings',
+      },
+    ],
   },
   {
     path: '/',

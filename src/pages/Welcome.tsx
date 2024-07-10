@@ -143,14 +143,14 @@ const Welcome: React.FC = () => {
             />
             <InfoCard
               index={2}
-              title="了解 ant design"
-              href="https://ant.design"
-              desc="antd 是基于 Ant Design 设计体系的 React UI 组件库，主要用于研发企业级中后台产品。"
+              title="了解本项目"
+              href="https://github.com/Cxy1ng/AntDesignProProj-webapp"
+              desc="Microworld 管理后台是基于 AntDesign Pro + React 构建的，主要用于管理 MWDS 所开设的一系列服务器。"
             />
             <InfoCard
               index={3}
               title="了解 Pro Components"
-              href="https://procomponents.ant.design"
+              href="/404.tsx"
               desc="ProComponents 是一个基于 Ant Design 做了更高抽象的模板组件，以 一个组件就是一个页面为开发理念，为中后台开发带来更好的体验。"
             />
           </div>

@@ -3,7 +3,7 @@ export default {
   'menu.more-blocks': 'More Blocks',
   'menu.home': 'Home',
   'menu.admin': 'Admin',
-  'menu.admin.sub-page': 'Sub-Page',
+  'menu.admin.playercenter': 'Player Center',
   'menu.login': 'Login',
   'menu.register': 'Register',
   'menu.register-result': 'Register Result',
@@ -49,4 +49,6 @@ export default {
   'menu.editor.flow': 'Flow Editor',
   'menu.editor.mind': 'Mind Editor',
   'menu.editor.koni': 'Koni Editor',
+  'menu.servers.serverlist': 'Server List',
+  'menu.servers': 'Servers',
 };
