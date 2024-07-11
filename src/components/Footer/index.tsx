@@ -1,12 +1,17 @@
 import { GithubOutlined } from '@ant-design/icons';
 import { DefaultFooter } from '@ant-design/pro-components';
+import { theme } from 'antd';
 import React from 'react';
 
 const Footer: React.FC = () => {
+  const { useToken } = theme;
+
+  const { token } = useToken();
   return (
     <DefaultFooter
       style={{
-        background: 'none',
+        backgroundColor: token.colorBgContainer,
+        color: token.colorTextSecondary,
       }}
       links={[
         {

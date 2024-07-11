@@ -1,4 +1,5 @@
 import { outLogin } from '@/services/ant-design-pro/api';
+import { FormattedMessage } from '@@/exports';
 import { LogoutOutlined, SettingOutlined, UserOutlined } from '@ant-design/icons';
 import { history, useModel } from '@umijs/max';
 import { Spin } from 'antd';
@@ -107,20 +108,20 @@ export const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu, childre
             icon: <UserOutlined />,
             label: '个人中心',
           },
-          {
-            key: 'settings',
-            icon: <SettingOutlined />,
-            label: '个人设置',
-          },
-          {
-            type: 'divider' as const,
-          },
         ]
       : []),
     {
+      key: 'settings',
+      icon: <SettingOutlined />,
+      label: <FormattedMessage id="menu.account.settings" defaultMessage="Account Settings" />,
+    },
+    {
+      type: 'divider' as const,
+    },
+    {
       key: 'logout',
       icon: <LogoutOutlined />,
-      label: '退出登录',
+      label: <FormattedMessage id="menu.account.logout" defaultMessage="Logout" />,
     },
   ];
 

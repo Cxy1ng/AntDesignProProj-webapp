@@ -1,6 +1,6 @@
 export default {
   'pages.layouts.userLayout.title':
-    'Ant Design is the most influential web design specification in Xihu district',
+    'Microworld DS is the most influential server cluster in Salted Fish Planet',
   'pages.login.accountLogin.tab': 'Account Login',
   'pages.login.accountLogin.errorMessage': 'Incorrect username/password(admin/ant.design)',
   'pages.login.failure': 'Login failed, please try again!',
@@ -67,4 +67,19 @@ export default {
   'pages.searchTable.tenThousand': '0000',
   'pages.searchTable.batchDeletion': 'batch deletion',
   'pages.searchTable.batchApproval': 'batch approval',
+  'pages.account.settings.profile': 'Profile',
+  'pages.account.settings.avatar': 'Avatar',
+  'pages.account.settings.privacy': 'Privacy',
+  'pages.account.settings.password': 'Password',
+  'pages.account.settings.other': 'Other Settings',
+  'pages.account.settings.profile.avatar': 'Avatar',
+  'pages.account.settings.profile.username': 'Username',
+  'pages.account.settings.profile.nickname': 'Nickname',
+  'pages.account.settings.profile.email': 'Email',
+  'pages.account.settings.profile.regdate': 'Register Date',
+  'pages.account.settings.profile.lstlogin': 'Last Login',
+  'pages.account.settings.profile.status': 'Status',
+  'pages.account.settings.profile.svplay': 'Server Playing',
+  'pages.account.settings.profile.svplayed': 'Server Played',
+  'pages.account.settings.profile.desc': 'Description',
 };
