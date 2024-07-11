@@ -1,5 +1,5 @@
 export default {
-  'app.setting.pagestyle': '整體風格設置',
+  'app.setting.pagestyle': '整體風格設定',
   'app.setting.pagestyle.dark': '暗色菜單風格',
   'app.setting.pagestyle.light': '亮色菜單風格',
   'app.setting.content-width': '內容區域寬度',
@@ -22,9 +22,9 @@ export default {
   'app.setting.fixedsidebar.hint': '側邊菜單布局時可配置',
   'app.setting.hideheader': '下滑時隱藏 Header',
   'app.setting.hideheader.hint': '固定 Header 時可配置',
-  'app.setting.othersettings': '其他設置',
+  'app.setting.othersettings': '其他設定',
   'app.setting.weakmode': '色弱模式',
-  'app.setting.copy': '拷貝設置',
+  'app.setting.copy': '拷貝設定',
   'app.setting.copyinfo': '拷貝成功，請到 config/defaultSettings.js 中替換默認配置',
   'app.setting.production.hint':
     '配置欄只在開發環境用於預覽，生產環境不會展現，請拷貝後手動修改配置文件',

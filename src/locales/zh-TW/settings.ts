@@ -1,6 +1,6 @@
 export default {
-  'app.settings.menuMap.basic': '基本設置',
-  'app.settings.menuMap.security': '安全設置',
+  'app.settings.menuMap.basic': '基本設定',
+  'app.settings.menuMap.security': '安全設定',
   'app.settings.menuMap.binding': '賬號綁定',
   'app.settings.menuMap.notification': '新消息通知',
   'app.settings.basic.avatar': '頭像',
@@ -35,7 +35,7 @@ export default {
   'app.settings.security.mfa': 'MFA 設備',
   'app.settings.security.mfa-description': '未綁定 MFA 設備，綁定後，可以進行二次確認',
   'app.settings.security.modify': '修改',
-  'app.settings.security.set': '設置',
+  'app.settings.security.set': '設定',
   'app.settings.security.bind': '綁定',
   'app.settings.binding.taobao': '綁定淘寶',
   'app.settings.binding.taobao-description': '當前未綁定淘寶賬號',
