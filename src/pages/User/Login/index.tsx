@@ -1,23 +1,18 @@
-import { Footer } from '@/components';
 import { login } from '@/services/ant-design-pro/api';
 import { getFakeCaptcha } from '@/services/ant-design-pro/login';
+import { LockOutlined, MobileOutlined, UserOutlined } from '@ant-design/icons';
 import {
-  LockOutlined,
-  MobileOutlined,
-  UserOutlined,
-} from '@ant-design/icons';
-import {
-  LoginForm,
+  LoginFormPage,
   ProFormCaptcha,
   ProFormCheckbox,
   ProFormText,
 } from '@ant-design/pro-components';
-import { FormattedMessage, history, SelectLang, useIntl, useModel, Helmet } from '@umijs/max';
-import { Alert, message, Tabs } from 'antd';
-import Settings from '../../../../config/defaultSettings';
+import { FormattedMessage, Helmet, history, SelectLang, useIntl, useModel } from '@umijs/max';
+import { Alert, message, Tabs, theme } from 'antd';
+import { createStyles } from 'antd-style';
 import React, { useState } from 'react';
 import { flushSync } from 'react-dom';
-import { createStyles } from 'antd-style';
+import Settings from '../../../../config/defaultSettings';
 
 const useStyles = createStyles(({ token }) => {
   return {
@@ -37,7 +32,7 @@ const useStyles = createStyles(({ token }) => {
       height: 42,
       lineHeight: '42px',
       position: 'fixed',
-      right: 16,
+      right: 8,
       borderRadius: token.borderRadius,
       ':hover': {
         backgroundColor: token.colorBgTextHover,
@@ -55,7 +50,6 @@ const useStyles = createStyles(({ token }) => {
     },
   };
 });
-
 
 const Lang = () => {
   const { styles } = useStyles();
@@ -88,7 +82,8 @@ const Login: React.FC = () => {
   const { initialState, setInitialState } = useModel('@@initialState');
   const { styles } = useStyles();
   const intl = useIntl();
-
+  const { useToken } = theme;
+  const { token } = useToken();
   const fetchUserInfo = async () => {
     const userInfo = await initialState?.fetchUserInfo?.();
     if (userInfo) {
@@ -129,7 +124,6 @@ const Login: React.FC = () => {
     }
   };
   const { status, type: loginType } = userLoginState;
-
   return (
     <div className={styles.container}>
       <Helmet>
@@ -141,17 +135,21 @@ const Login: React.FC = () => {
           - {Settings.title}
         </title>
       </Helmet>
-      <Lang />
       <div
         style={{
-          flex: '1',
-          padding: '32px 0',
+          backgroundColor: token.colorBgContainer,
+          height: '100vh',
+          color: token.colorTextSecondary,
         }}
       >
-        <LoginForm
-          contentStyle={{
-            minWidth: 280,
-            maxWidth: '75vw',
+        <LoginFormPage
+          backgroundVideoUrl="https://gw.alipayobjects.com/v/huamei_gcee1x/afts/video/jXRBRK_VAwoAAAAAAAAAAAAAK4eUAQBr"
+          containerStyle={{
+            backdropFilter: 'blur(4px)',
+            borderRadius: '10px',
+            background: 'rgba(255, 255, 255, 0.7)',
+            color: 'white',
+            minWidth: '400px',
           }}
           logo={<img alt="logo" src="/Earth.png" />}
           title="Microworld DS"
@@ -163,6 +161,7 @@ const Login: React.FC = () => {
             await handleSubmit(values as API.LoginParams);
           }}
         >
+          <Lang />
           <Tabs
             activeKey={type}
             onChange={setType}
@@ -184,7 +183,6 @@ const Login: React.FC = () => {
               },
             ]}
           />
-
           {status === 'error' && loginType === 'account' && (
             <LoginMessage
               content={intl.formatMessage({
@@ -340,9 +338,8 @@ const Login: React.FC = () => {
               <FormattedMessage id="pages.login.forgotPassword" defaultMessage="忘记密码" />
             </a>
           </div>
-        </LoginForm>
+        </LoginFormPage>
       </div>
-      <Footer />
     </div>
   );
 };

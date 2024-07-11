@@ -4,7 +4,7 @@ export default {
   'menu.home': '首页',
   'menu.admin': '管理菜单',
   'menu.admin.playercenter': '玩家中心',
-  'menu.login': '登录',
+  'menu.login': '登录 ',
   'menu.register': '注册',
   'menu.register-result': '注册结果',
   'menu.dashboard': '仪表盘',
