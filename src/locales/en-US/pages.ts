@@ -82,4 +82,6 @@ export default {
   'pages.account.settings.profile.svplay': 'Server Playing',
   'pages.account.settings.profile.svplayed': 'Server Played',
   'pages.account.settings.profile.desc': 'Description',
+  'pages.account.settings.avatar.current': 'Current Avatar',
+  'pages.account.settings.avatar.change': 'Change Avatar',
 };
