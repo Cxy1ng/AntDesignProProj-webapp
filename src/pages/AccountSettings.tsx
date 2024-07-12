@@ -1,8 +1,23 @@
-import { PageContainer } from '@ant-design/pro-components';
+import { useIntl } from '@@/exports';
+import { PlusOutlined } from '@ant-design/icons';
+import { PageContainer, ProCard, ProForm } from '@ant-design/pro-components';
 import { FormattedMessage } from '@umijs/max';
-import type { DescriptionsProps } from 'antd';
-import { Avatar, Badge, Descriptions } from 'antd';
-import React from 'react';
+import {
+  Avatar,
+  Badge,
+  Descriptions,
+  DescriptionsProps,
+  GetProp,
+  Image,
+  message,
+  Space,
+  Upload,
+  UploadFile,
+  UploadProps,
+} from 'antd';
+import RcResizeObserver from 'rc-resize-observer';
+import React, { useState } from 'react';
+
 const items: DescriptionsProps['items'] = [
   {
     label: <FormattedMessage id="pages.account.settings.profile.avatar" defaultMessage="Avatar" />,
@@ -92,8 +107,49 @@ const items: DescriptionsProps['items'] = [
     ),
   },
 ];
+type FileType = Parameters<GetProp<UploadProps, 'beforeUpload'>>[0];
+const getBase64 = (file: FileType): Promise<string> =>
+  new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => resolve(reader.result as string);
+    reader.onerror = (error) => reject(error);
+  });
+const beforeUpload = (file: FileType) => {
+  const isImage =
+    file.type === 'image/jpeg' || file.type === 'image/png' || file.type === 'image/gif';
+  if (!isImage) {
+    message.error('You can only upload JPG/PNG/GIF file!');
+  }
+  const isLt2M = file.size / 1024 / 1024 < 2;
+  if (!isLt2M) {
+    message.error('Image must smaller than 2MB!');
+  }
+  return isImage && isLt2M;
+};
 
 const Admin: React.FC = () => {
+  const intl = useIntl();
+  const [previewOpen, setPreviewOpen] = useState(false);
+  const [previewImage, setPreviewImage] = useState('');
+  const [fileList, setFileList] = useState<UploadFile[]>([]);
+  const handlePreview = async (file: UploadFile) => {
+    if (!file.url && !file.preview) {
+      file.preview = await getBase64(file.originFileObj as FileType);
+    }
+
+    setPreviewImage(file.url || (file.preview as string));
+    setPreviewOpen(true);
+  };
+  const handleChange: UploadProps['onChange'] = ({ fileList: newFileList }) =>
+    setFileList(newFileList);
+  const uploadButton = (
+    <button style={{ border: 0, background: 'none' }} type="button">
+      <PlusOutlined />
+      <div style={{ marginTop: 8 }}>Upload</div>
+    </button>
+  );
+  const [responsive, setResponsive] = useState(false);
   return (
     <PageContainer
       tabList={[
@@ -111,6 +167,64 @@ const Admin: React.FC = () => {
         {
           tab: <FormattedMessage id="pages.account.settings.avatar" defaultMessage="Avatar" />,
           key: '2',
+          children: (
+            <RcResizeObserver
+              key="resize-observer"
+              onResize={(offset) => {
+                setResponsive(offset.width < 596);
+              }}
+            >
+              <ProCard split={responsive ? 'horizontal' : 'vertical'} bordered>
+                <ProCard
+                  title={intl.formatMessage({
+                    id: 'pages.account.settings.avatar.current',
+                    defaultMessage: 'Current Avatar',
+                  })}
+                  colSpan="50%"
+                >
+                  <Space direction="vertical" size={16}>
+                    <Space wrap size={16}>
+                      <Avatar size={100} icon={<img src={'/girl.gif'} />} />
+                      <Avatar size="large" icon={<img src={'/girl.gif'} />} />
+                      <Avatar size="small" icon={<img src={'/girl.gif'} />} />
+                    </Space>
+                  </Space>
+                </ProCard>
+                <ProCard
+                  title={intl.formatMessage({
+                    id: 'pages.account.settings.avatar.change',
+                    defaultMessage: 'Change Avatar',
+                  })}
+                  colSpan="50%"
+                >
+                  <ProForm>
+                    <Upload
+                      action="https://660d2bd96ddfa2943b33731c.mockapi.io/api/upload"
+                      listType="picture-circle"
+                      fileList={fileList}
+                      beforeUpload={beforeUpload}
+                      onPreview={handlePreview}
+                      onChange={handleChange}
+                    >
+                      {fileList.length >= 1 ? null : uploadButton}
+                    </Upload>
+                    <br />
+                    {previewImage && (
+                      <Image
+                        wrapperStyle={{ display: 'none' }}
+                        preview={{
+                          visible: previewOpen,
+                          onVisibleChange: (visible) => setPreviewOpen(visible),
+                          afterOpenChange: (visible) => !visible && setPreviewImage(''),
+                        }}
+                        src={previewImage}
+                      />
+                    )}
+                  </ProForm>
+                </ProCard>
+              </ProCard>
+            </RcResizeObserver>
+          ),
         },
         {
           tab: <FormattedMessage id="pages.account.settings.privacy" defaultMessage="Privacy" />,

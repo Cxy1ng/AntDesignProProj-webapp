@@ -79,4 +79,6 @@ export default {
   'pages.account.settings.profile.svplay': '正在遊玩的伺服器',
   'pages.account.settings.profile.svplayed': '遊玩過的伺服器',
   'pages.account.settings.profile.desc': '描述',
+  'pages.account.settings.avatar.current': '當前頭像',
+  'pages.account.settings.avatar.change': '更換頭像',
 };
