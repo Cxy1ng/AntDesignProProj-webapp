@@ -16,6 +16,7 @@ import {
   UploadProps,
 } from 'antd';
 import RcResizeObserver from 'rc-resize-observer';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import React, { useState } from 'react';
 
 const items: DescriptionsProps['items'] = [
@@ -149,6 +150,7 @@ const Admin: React.FC = () => {
       <div style={{ marginTop: 8 }}>Upload</div>
     </button>
   );
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [responsive, setResponsive] = useState(false);
   return (
     <PageContainer
@@ -174,13 +176,13 @@ const Admin: React.FC = () => {
                 setResponsive(offset.width < 596);
               }}
             >
-              <ProCard split={responsive ? 'horizontal' : 'vertical'} bordered>
+              <ProCard split={'horizontal'} bordered>
                 <ProCard
                   title={intl.formatMessage({
                     id: 'pages.account.settings.avatar.current',
                     defaultMessage: 'Current Avatar',
                   })}
-                  colSpan="50%"
+                  colSpan="100%"
                 >
                   <Space direction="vertical" size={16}>
                     <Space wrap size={16}>
@@ -195,7 +197,7 @@ const Admin: React.FC = () => {
                     id: 'pages.account.settings.avatar.change',
                     defaultMessage: 'Change Avatar',
                   })}
-                  colSpan="50%"
+                  colSpan="100%"
                 >
                   <ProForm>
                     <Upload
@@ -229,6 +231,11 @@ const Admin: React.FC = () => {
         {
           tab: <FormattedMessage id="pages.account.settings.privacy" defaultMessage="Privacy" />,
           key: '3',
+          children: (
+            <ProCard>
+              <ProForm></ProForm>
+            </ProCard>
+          ),
         },
         {
           tab: <FormattedMessage id="pages.account.settings.password" defaultMessage="Password" />,
